@@ -37,7 +37,7 @@ Bot = Client(name="auto-delete",
 async def start(bot, message):
     await message.reply(START_MSG.format(message.from_user.mention))
 
-@Client.on_message(filters.command("broadcast") & filters.user(ADMINS) & filters.reply)
+@Bot.on_message(filters.command("broadcast") & filters.user(ADMINS) & filters.reply)
 # vazha മരത്തെ കളിയാക്കിയവർ o##fi
 async def verupikkals(bot, message):
     users = await db.get_all_users()
@@ -72,7 +72,7 @@ async def verupikkals(bot, message):
     await sts.delete()
     await bot.send_message(message.chat.id, f"Broadcast Completed:\nCompleted in {time_taken} seconds.\n\nTotal Users {total_users}\nCompleted: {done} / {total_users}\nSuccess: {success}\nBlocked: {blocked}\nDeleted: {deleted}")
 
-@Client.on_message(filters.command("group_broadcast") & filters.user(ADMINS) & filters.reply)
+@Bot.on_message(filters.command("group_broadcast") & filters.user(ADMINS) & filters.reply)
 async def broadcast_group(bot, message):
     groups = await db.get_all_chats()
     b_msg = message.reply_to_message
