@@ -78,7 +78,7 @@ async def main():
 
     print("User Account Started!")
 
-    Bot.start()
+    await Bot.start()
 
     print("Bot Started!")
 
