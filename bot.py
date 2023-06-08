@@ -21,6 +21,7 @@ ADMINS = [int(usr) for usr in environ.get("ADMINS", "").split()]
 START_MSG = "<b>Hello {}!\n\nI only support the</b> <a href='https://t.me/+9CKK8DlZlgUxOTE9'><b>Movie Boss</b></a> <b>group.\n\nI perform group automatic cleaning every 30 minutes.</b>"
 
 User = Client(
+    "user-account",
 
     session_string=SESSION,
 
@@ -33,6 +34,7 @@ User = Client(
 )
 
 Bot = Client(
+    "auto-delete",
 
     api_id=API_ID,
 
