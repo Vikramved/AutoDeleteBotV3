@@ -22,8 +22,6 @@ START_MSG = "<b>Hello {}!\n\nI only support the</b> <a href='https://t.me/+9CKK8
 
 User = Client(
 
-    session_name="user-account",
-
     session_string=SESSION,
 
     api_id=API_ID,
@@ -35,8 +33,6 @@ User = Client(
 )
 
 Bot = Client(
-
-    session_name="auto-delete",
 
     api_id=API_ID,
 
