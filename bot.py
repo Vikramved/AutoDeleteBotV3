@@ -2,17 +2,17 @@ from pyrogram import Client, filters
 
 from time import sleep
 
-api_id = <YOUR_API_ID>
+API_ID = "15428219"
 
-api_hash = '<YOUR_API_HASH>'
+API_HASH = "0042e5b26181a1e95ca40a7f7c51eaa7"
 
-bot_token = '<YOUR_BOT_TOKEN>'
+BOT_TOKEN = "5429880614:AAGomxybHKTYLRHNxomJOBsfe6azogCa9S0"
 
-group_id = '<YOUR_GROUP_ID>'
+GROUP_ID = "-1001397638909"
 
 # Create the Pyrogram client
 
-app = Client("delete_bot", api_id=api_id, api_hash=api_hash, bot_token=bot_token)
+app = Client("delete_bot", api_id=API_ID, api_hash=API_HASH, bot_token=BOT_TOKEN)
 
 # Filter to handle incoming messages in the group
 
@@ -22,7 +22,7 @@ def delete_messages(client, message):
 
     # Delete the message
 
-    client.delete_messages(chat_id=group_id, message_ids=message.message_id)
+    client.delete_messages(chat_id=GROUP_ID, message_ids=message.message_id)
 
 # Start the bot
 
