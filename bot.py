@@ -19,10 +19,9 @@ app = Client("delete_bot", api_id=API_ID, api_hash=API_HASH, bot_token=BOT_TOKEN
 @ app.on_message(filters.group & ~filters.edited)
 
 def delete_messages(client, message):
-
-    # Delete the message
-
-    client.delete_messages(chat_id=GROUP_ID, message_ids=message.message_id)
+    if not message.edited:
+# Delete the message
+        client.delete_messages(chat_id=GROUP_ID, message_ids=message.message_id)
 
 # Start the bot
 
